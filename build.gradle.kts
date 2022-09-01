@@ -4,8 +4,10 @@ plugins {
     id("org.checkerframework") apply(false)
 }
 
-group = "cafe.navy.items"
-version = "0.0.1"
+allprojects {
+    group = "cafe.navy.items"
+    version = "0.0.1"
+}
 
 subprojects {
     apply(plugin = "java")
