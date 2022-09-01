@@ -1,19 +1,37 @@
 plugins {
-    id("java")
+    `java`
+    `maven-publish`
+    id("org.checkerframework") apply(false)
 }
 
 group = "cafe.navy.items"
-version = "1.0-SNAPSHOT"
+version = "0.0.1"
 
-repositories {
-    mavenCentral()
+subprojects {
+    apply(plugin = "java")
+    apply(plugin = "org.checkerframework")
+    apply(plugin = "maven-publish")
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    configure<JavaPluginExtension> {
+        java {
+            toolchain.languageVersion.set(JavaLanguageVersion.of(18))
+        }
+    }
+
+    publishing {
+        // create maven publication using java artifacts
+        publications {
+            create<MavenPublication>(project.name) {
+                from(components["java"])
+            }
+        }
+    }
+
 }
 
-dependencies {
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.1")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1")
-}
 
-tasks.getByName<Test>("test") {
-    useJUnitPlatform()
-}
