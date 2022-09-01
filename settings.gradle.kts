@@ -1,6 +1,6 @@
 rootProject.name = "items"
 
-projects("core", "paper")
+projects("core", "paper-core", "paper-plugin")
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 enableFeaturePreview("VERSION_CATALOGS")

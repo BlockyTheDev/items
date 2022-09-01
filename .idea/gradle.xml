@@ -10,7 +10,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/core" />
-            <option value="$PROJECT_DIR$/paper" />
+            <option value="$PROJECT_DIR$/paper-core" />
+            <option value="$PROJECT_DIR$/paper-plugin" />
           </set>
         </option>
       </GradleProjectSettings>
