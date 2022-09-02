@@ -1,0 +1,4 @@
+name: items
+version: ${project.version}
+main: cafe.navy.items.paper.plugin.ItemsPlugin
+api-version: 1.19

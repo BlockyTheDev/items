@@ -2,6 +2,7 @@ plugins {
     `java`
     `maven-publish`
     id("org.checkerframework") apply(false)
+    id("io.papermc.paperweight.userdev") apply(false)
 }
 
 allprojects {
