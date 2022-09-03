@@ -49,7 +49,7 @@ public final class ItemListeners implements Listener {
     private void onProjectileLand(final @NonNull ProjectileHitEvent event) {
         System.out.println("ProjectileHitEvent");
         if (event.getEntity() instanceof ThrowableProjectile throwable) {
-            final Location location = event.getHitBlock() == null ? event.getEntity().getLocation() : event.getHitBlock().getLocation();
+            final Location location = event.getEntity().getLocation();
             final ItemStack stack = throwable.getItem();
             this.manager.getItem(stack)
                     .ifPresent(item -> {
