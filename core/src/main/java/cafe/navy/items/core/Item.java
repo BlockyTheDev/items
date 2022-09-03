@@ -13,17 +13,32 @@ public class Item {
     private final @NonNull UUID uuid;
     private final @NonNull List<ItemComponent> components;
     private final @NonNull ItemType type;
+    private final @NonNull ItemRuntime runtime;
 
     public Item(final @NonNull UUID uuid,
                 final @NonNull List<ItemComponent> components,
-                final @NonNull ItemType type) {
+                final @NonNull ItemType type,
+                final @NonNull ItemRuntime runtime) {
         this.uuid = uuid;
         this.components = components;
         this.type = type;
+        this.runtime = runtime;
+    }
+
+    public @NonNull UUID uuid() {
+        return this.uuid;
     }
 
     public @NonNull ItemType type() {
         return this.type;
+    }
+
+    public @NonNull ItemRuntime runtime() {
+        return this.runtime;
+    }
+
+    public void removeComponent(final @NonNull Class<? extends ItemComponent> type) {
+        this.components.removeIf(component -> component.getClass().equals(type));
     }
 
     public void addComponent(final @NonNull ItemComponent component) {
