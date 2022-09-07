@@ -7,7 +7,8 @@ dependencies {
     paperDevBundle("1.19.2-R0.1-SNAPSHOT")
     implementation(projects.itemsCore)
     implementation(projects.itemsPaperCore)
-    implementation(libs.cloud.paper)
+    implementation(libs.bedrock.core)
+    compileOnly(libs.cloud.paper)
 }
 
 tasks {
@@ -17,5 +18,9 @@ tasks {
 
     reobfJar {
         dependsOn(shadowJar)
+    }
+
+    shadowJar {
+
     }
 }
